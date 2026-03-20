@@ -72,7 +72,7 @@ class _StartScreenState extends State<StartScreen>
                   colors: [AppColors.colorPrimary, AppColors.colorPrimaryDark],
                 ).createShader(bounds),
                 child: const Text(
-                  'SoundDrop',
+                  'Tunez',
                   style: TextStyle(
                     fontSize: 54,
                     fontWeight: FontWeight.w700,
