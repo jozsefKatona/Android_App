@@ -26,6 +26,8 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/logo_headphone_icon.png"
+  adaptive_icon_foreground: "assets/logo_headphone_icon.png"
+  adaptive_icon_background: "#214d7d"
   min_sdk_android: 21
 
 flutter:
