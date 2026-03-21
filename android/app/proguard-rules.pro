@@ -1,0 +1,7 @@
+-keep class com.spotify.** { *; }
+-keep class com.google.** { *; }
+-keep class androidx.** { *; }
+-dontwarn com.spotify.**
+-dontwarn com.google.**
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable

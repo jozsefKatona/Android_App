@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="music_guess"
+        android:label="Tunez"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
 

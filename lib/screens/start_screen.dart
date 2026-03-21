@@ -74,8 +74,8 @@ class _StartScreenState extends State<StartScreen>
                 child: const Text(
                   'Tunez',
                   style: TextStyle(
-                    fontSize: 54,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 56,
+                    fontWeight: FontWeight.w900,
                     color: Colors.white,
                     letterSpacing: 6,
                   ),
@@ -85,18 +85,6 @@ class _StartScreenState extends State<StartScreen>
               const SizedBox(height: 8),
 
               // Subtitle Badge
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 6,
-                ),
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.colorAccent, width: 1.5),
-                  borderRadius: BorderRadius.circular(20),
-                  color: AppColors.colorAccent.withOpacity(0.08),
-                ),
-              ),
-
               const Spacer(flex: 2),
 
               // ─── Pulsierendes Icon ────────────────────────────────────
