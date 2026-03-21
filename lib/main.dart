@@ -101,10 +101,8 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   }
 
   Future<void> _onBarcodeDetected(String raw) async {
-    print('📷 Gescannt: $raw');
     final uri = await _barcodeService.process(raw);
-    print('🔗 URI: $uri');
-    print('🔌 Verbunden: $_isConnected');
+
     if (uri == null || !_isConnected) return;
 
     final fullSong = await _barcodeService.isFullSong();

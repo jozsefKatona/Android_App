@@ -176,11 +176,164 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
 
+          const SizedBox(height: 32),
+
+          // ─── Spielregeln ──────────────────────────────────────────
+          _sectionLabel(_t('Spielregeln', 'Game Rules')),
+          const SizedBox(height: 12),
+
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.colorCard,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Theme(
+              data: Theme.of(
+                context,
+              ).copyWith(dividerColor: Colors.transparent),
+              child: ExpansionTile(
+                tilePadding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 4,
+                ),
+                childrenPadding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                title: Text(
+                  _t('Spielregeln anzeigen', 'Show Game Rules'),
+                  style: const TextStyle(
+                    color: AppColors.colorLight,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.expand_more,
+                  color: AppColors.colorPrimary,
+                ),
+                children: [
+                  _ruleItem(
+                    icon: Icons.group,
+                    title: _t('Spieler', 'Players'),
+                    text: _t(
+                      '2–10 Spieler. Alle spielen gegeneinander.',
+                      '2–10 players. Everyone plays against each other.',
+                    ),
+                  ),
+                  _divider(),
+                  _ruleItem(
+                    icon: Icons.qr_code_scanner,
+                    title: _t('QR-Code scannen', 'Scan QR Code'),
+                    text: _t(
+                      'Scanne die Rückseite einer Karte um den Song abzuspielen. Niemand außer dem Scanner darf die Karte sehen.',
+                      'Scan the back of a card to play the song. Nobody except the scanner may see the card.',
+                    ),
+                  ),
+                  _divider(),
+                  _ruleItem(
+                    icon: Icons.music_note,
+                    title: _t('Song erraten', 'Guess the Song'),
+                    text: _t(
+                      'Alle Mitspieler versuchen das Erscheinungsjahr des Songs zu erraten und in ihrer persönlichen Zeitlinie einzuordnen.',
+                      'All players try to guess the release year of the song and place it in their personal timeline.',
+                    ),
+                  ),
+                  _divider(),
+                  _ruleItem(
+                    icon: Icons.timeline,
+                    title: _t('Zeitlinie', 'Timeline'),
+                    text: _t(
+                      'Jeder Spieler baut seine eigene Zeitlinie aus Karten auf. Die Karten müssen in der richtigen chronologischen Reihenfolge platziert werden.',
+                      'Each player builds their own timeline of cards. Cards must be placed in the correct chronological order.',
+                    ),
+                  ),
+                  _divider(),
+                  _ruleItem(
+                    icon: Icons.check_circle_outline,
+                    title: _t('Richtig geraten', 'Correct Guess'),
+                    text: _t(
+                      'Wer das Jahr richtig einordnet, behält die Karte in seiner Zeitlinie.',
+                      'Whoever places the year correctly keeps the card in their timeline.',
+                    ),
+                  ),
+                  _divider(),
+                  _ruleItem(
+                    icon: Icons.cancel_outlined,
+                    title: _t('Falsch geraten', 'Wrong Guess'),
+                    text: _t(
+                      'Wer falsch liegt, muss die Karte abgeben. Die Karte kommt aus dem Spiel.',
+                      'Whoever guesses wrong must discard the card. The card is removed from the game.',
+                    ),
+                  ),
+                  _divider(),
+                  _ruleItem(
+                    icon: Icons.emoji_events,
+                    title: _t('Gewinner', 'Winner'),
+                    text: _t(
+                      'Wer zuerst 10 Karten korrekt in seiner Zeitlinie platziert hat, gewinnt das Spiel!',
+                      'The first player to correctly place 10 cards in their timeline wins the game!',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
           const SizedBox(height: 40),
         ],
       ),
     );
   }
+
+  Widget _ruleItem({
+    required IconData icon,
+    required String title,
+    required String text,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 36,
+            height: 36,
+            decoration: BoxDecoration(
+              color: AppColors.colorPrimary.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Icon(icon, color: AppColors.colorPrimary, size: 18),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: AppColors.colorLight,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  text,
+                  style: TextStyle(
+                    color: AppColors.colorLight.withOpacity(0.5),
+                    fontSize: 13,
+                    height: 1.5,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _divider() =>
+      Divider(color: AppColors.colorNeutral.withOpacity(0.15), height: 1);
 
   Widget _sectionLabel(String text) {
     return Text(
@@ -232,7 +385,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
             const SizedBox(width: 16),
-            // Radio Button
             Container(
               width: 22,
               height: 22,

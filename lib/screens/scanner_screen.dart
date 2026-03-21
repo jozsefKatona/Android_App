@@ -114,11 +114,9 @@ class _ScannerScreenState extends State<ScannerScreen> {
                         borderRadius: BorderRadius.circular(14),
                         child: MobileScanner(
                           onDetect: (capture) {
-                            print('📸 onDetect aufgerufen');
                             final value =
                                 capture.barcodes.firstOrNull?.rawValue ??
                                 capture.barcodes.firstOrNull?.displayValue;
-                            print('📸 Barcode Wert: $value');
                             if (value != null) widget.onBarcodeDetected(value);
                           },
                         ),
