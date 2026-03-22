@@ -24,8 +24,9 @@ class BarcodeService {
     if (direct != null) return direct;
 
     if (rawValue.contains('qrsong.io')) {
-      final uri = _songMap?[rawValue];
-      if (uri == null) return uri;
+      final cleanUrl = rawValue.split('?').first;
+      final uri = _songMap?[cleanUrl];
+      if (uri != null) return uri;
     }
 
     return null;
