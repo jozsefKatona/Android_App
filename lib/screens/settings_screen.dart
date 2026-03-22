@@ -64,7 +64,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          // ─── Spotify ──────────────────────────────────────────────
           _sectionLabel(_t('Spotify-Einstellungen', 'Spotify Settings')),
           const SizedBox(height: 12),
 
@@ -112,7 +111,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
           const SizedBox(height: 32),
 
-          // ─── Spielmodus ───────────────────────────────────────────
           _sectionLabel(_t('Spielmodus', 'Game Mode')),
           const SizedBox(height: 12),
 
@@ -145,7 +143,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
           const SizedBox(height: 32),
 
-          // ─── Sprache ──────────────────────────────────────────────
           _sectionLabel(_t('Sprache', 'Language')),
           const SizedBox(height: 12),
 
@@ -178,7 +175,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
           const SizedBox(height: 32),
 
-          // ─── Spielregeln ──────────────────────────────────────────
           _sectionLabel(_t('Spielregeln', 'Game Rules')),
           const SizedBox(height: 12),
 

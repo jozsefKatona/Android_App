@@ -89,10 +89,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
 
     return Stack(
       children: [
-        // ─── Hintergrund ────────────────────────────────────────────
         Container(color: AppColors.colorBackground),
-
-        // ─── Scanner ────────────────────────────────────────────────
         Column(
           children: [
             Expanded(
@@ -152,8 +149,6 @@ class _ScannerScreenState extends State<ScannerScreen> {
             ),
           ],
         ),
-
-        // ─── Zurück Button ──────────────────────────────────────────
         Positioned(
           top: 16,
           left: 16,

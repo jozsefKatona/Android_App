@@ -17,7 +17,7 @@ subprojects {
 }
 
 subprojects {
-    project.evaluationDependsOn(":app") // ← afterEvaluate entfernt
+    project.evaluationDependsOn(":app") 
 }
 
 tasks.register<Delete>("clean") {

@@ -20,15 +20,12 @@ class BarcodeService {
     }
     _lastScan = now;
 
-    // 1. Direkte Spotify-URI oder Spotify-Link
     final direct = _extractSpotifyUri(rawValue);
     if (direct != null) return direct;
 
-    // 2. QRSong-URL → lokale Map nachschlagen
     if (rawValue.contains('qrsong.io')) {
       final uri = _songMap?[rawValue];
-      if (uri == null) print('❌ Karte nicht in songs.json: $rawValue');
-      return uri;
+      if (uri == null) return uri;
     }
 
     return null;

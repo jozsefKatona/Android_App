@@ -87,7 +87,6 @@ class _StartScreenState extends State<StartScreen>
               // Subtitle Badge
               const Spacer(flex: 2),
 
-              // ─── Pulsierendes Icon ────────────────────────────────────
               AnimatedBuilder(
                 animation: _pulseAnimation,
                 builder: (context, child) {
@@ -119,7 +118,6 @@ class _StartScreenState extends State<StartScreen>
 
               const SizedBox(height: 16),
 
-              // ─── Spotify Verbindungsstatus ────────────────────────────
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -154,7 +152,6 @@ class _StartScreenState extends State<StartScreen>
 
               const Spacer(flex: 3),
 
-              // ─── Buttons ──────────────────────────────────────────────
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: Column(

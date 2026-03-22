@@ -17,16 +17,13 @@ class SpotifyService {
         scope:
             'app-remote-control,user-read-playback-state,user-modify-playback-state',
       );
-      print('✅ Token erhalten: $token');
 
       final connected = await SpotifySdk.connectToSpotifyRemote(
         clientId: GameConfig.clientId,
         redirectUrl: GameConfig.redirectUrl,
       );
-      print('✅ Verbunden: $connected');
       return connected;
     } catch (e) {
-      print('❌ Connect Fehler: $e');
       return false;
     }
   }
@@ -39,17 +36,14 @@ class SpotifyService {
     print('▶️ Spiele: $spotifyUri (fullSong: $fullSong)');
     try {
       await SpotifySdk.play(spotifyUri: spotifyUri);
-      print('✅ Play erfolgreich');
 
       // 30s Vorschau — automatisch pausieren
       if (!fullSong) {
         _previewTimer = Timer(const Duration(seconds: 30), () async {
-          print('⏱ 30s Vorschau beendet');
           await pause();
         });
       }
     } catch (e) {
-      print('❌ Play Fehler: $e');
       rethrow;
     }
   }

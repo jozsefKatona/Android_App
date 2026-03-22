@@ -81,7 +81,6 @@ class _PlayingScreenState extends State<PlayingScreen>
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // ─── Lottie Animation + Button ───────────────────────────
           GestureDetector(
             onTap: widget.onTogglePlayPause,
             child: SizedBox(
@@ -90,11 +89,9 @@ class _PlayingScreenState extends State<PlayingScreen>
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  // Wackel-Animation statt voller Rotation
                   AnimatedBuilder(
                     animation: _rotationController,
                     builder: (context, child) {
-                      // Wackelt zwischen -15° und +15°
                       final angle = (_rotationController.value * 2 - 1) * 0.26;
                       return Transform.rotate(angle: angle, child: child);
                     },
@@ -110,8 +107,6 @@ class _PlayingScreenState extends State<PlayingScreen>
                       },
                     ),
                   ),
-
-                  // Play/Pause Button
                   Container(
                     width: 72,
                     height: 72,
@@ -145,7 +140,6 @@ class _PlayingScreenState extends State<PlayingScreen>
 
           const SizedBox(height: 48),
 
-          // ─── Song beenden Button ──────────────────────────────────
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 48),
             child: SizedBox(
